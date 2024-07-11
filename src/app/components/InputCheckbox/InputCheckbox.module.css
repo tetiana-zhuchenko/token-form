@@ -1,0 +1,52 @@
+.checkboxRadioTitle {
+  font-family: var(--font-roboto);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  color: var(--font-color-secondary);
+  margin-bottom: 0.8rem;
+}
+
+.checkboxRadio {
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
+  align-items: flex-start;
+  position: relative;
+}
+.inputCheckboxRadio {
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+}
+
+.inputCheckboxRadio::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: var(--border);
+  border-radius: 0.2rem;
+  background-color: #fff;
+  transform: translateY(-50%);
+}
+
+.inputCheckboxRadio:checked + .labelCheckboxRadio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 2.45%;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--bg-secondary);
+  transform: translate(-50%, -50%);
+}
+.labelCheckboxRadio {
+  font-family: var(--font-roboto);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  text-align: left;
+}

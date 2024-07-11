@@ -1,0 +1,56 @@
+.button {
+  font-family: var(--font-roboto);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  color: var(--font-color-primary);
+  text-align: center;
+  padding: 0.6rem 1.1rem;
+  border: var(--border);
+  border-radius: 2.8rem;
+  background-color: var(--bg--primary);
+}
+
+.button:hover,
+.button:active {
+  background: var(--hover);
+}
+
+.activeBtn {
+  font-family: var(--font-roboto);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  color: var(--font-color-complimentary);
+  text-align: center;
+  padding: 0.7rem 1.1rem;
+  border: none;
+  border-radius: 2.8rem;
+  background-color: var(--bg-secondary);
+}
+
+.activeBtn:hover,
+.activeBtn:active {
+  background: var(--hover);
+}
+
+.buttonSubmit {
+  width: 13rem;
+  height: 3.6rem;
+  font-family: var(--font-roboto);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  color: var(--font-color-complimentary);
+  text-align: center;
+  border: none;
+  border-radius: 2.8rem;
+  background-color: var(--bg-secondary);
+  margin-top: 5.8rem;
+}
+
+.buttonSubmit:hover,
+.buttonSubmit:active {
+  background: var(--hover);
+}
