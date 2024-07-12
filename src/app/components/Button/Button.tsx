@@ -1,4 +1,3 @@
-import { MouseEventHandler } from 'react'
 import styles from './Button.module.css'
 import { TBlockchain } from 'src/app/types/TBlockchain'
 

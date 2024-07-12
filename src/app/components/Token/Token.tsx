@@ -1,40 +1,44 @@
-import { FilterButton } from '../FilterButton/FilterButton'
+import { TTokenData } from 'src/app/types/TTokenData'
+import { CreateButton } from '../CreateButton/CreateButton'
 import styles from './Token.module.css'
 
-export const Token = () => {
+export const Token = (token: TTokenData) => {
+  console.log('test', token)
+  const { company, tokenName, symbol, tokenSupply, blockchain, enabled } = token
   return (
     <div>
       <ul className={styles.container}>
         <li className={styles.tokenInfo}>
           <p className={styles.name}>Token Name:</p>
-          <p className={styles.value}>My Token</p>
+          <p className={styles.value}>{tokenName}</p>
         </li>
         <li className={styles.tokenInfo}>
           <p className={styles.name}>Company:</p>
-          <p className={styles.value}>Microsoft</p>
+          <p className={styles.value}>{company}</p>
         </li>
         <li className={styles.tokenInfo}>
           <p className={styles.name}>Symbol:</p>
-          <p className={styles.value}>BTC</p>
+          <p className={styles.value}>{symbol}</p>
         </li>
         <li className={styles.tokenInfo}>
           <p className={styles.name}>Maximum token supply:</p>
-          <p className={styles.value}>10000</p>
+          <p className={styles.value}>{tokenSupply}</p>
         </li>
         <li className={styles.tokenInfo}>
           <p className={styles.name}>Blockchain:</p>
-          <p className={styles.value}>Enthereum</p>
+          <p className={styles.value}>{blockchain}</p>
         </li>
         <li className={styles.tokenInfo}>
           <p className={styles.name}>Supply:</p>
-          <p className={styles.value}>Enabled</p>
+          <p className={styles.value}>{enabled ? 'Enabled' : 'Disabled'}</p>
         </li>
         <li>
-          <FilterButton
-            title={'Duplicate item'}
+          <CreateButton
+            title={'Duplicate Token'}
             type={'button'}
             isActive={true}
             key={'Enthereum'}
+            handleButtonClick={() => {}}
           />
         </li>
       </ul>

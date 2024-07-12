@@ -1,15 +1,11 @@
 .main {
   height: calc(100dvh - var(--header-height) - var(--footer-height));
-
-  /* remove late */
-  border: 1px solid red;
   font-size: 2rem;
   overflow-y: scroll;
 }
 
 .wrapper {
   max-width: 62rem;
-  border: 1px solid green;
   margin: 3.3rem auto;
   display: flex;
   flex-direction: column;

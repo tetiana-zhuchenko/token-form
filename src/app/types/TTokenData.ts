@@ -7,4 +7,5 @@ export type TTokenData = {
   tokenSupply: number | null
   blockchain: TBlockchain
   enabled: boolean
+  id: string
 }

@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import styles from './page.module.css'
 import { Form } from './components/Form/Form'
 
@@ -12,7 +11,6 @@ export default function Home() {
           <h1 className={styles.title}>Token</h1>
           <h4 className={styles.description}>Create your own crypto token</h4>
         </div>
-
         <Form />
       </div>
     </main>

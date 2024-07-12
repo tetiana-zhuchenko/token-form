@@ -1,17 +1,12 @@
 .main {
   height: calc(100dvh - var(--header-height) - var(--footer-height));
   margin: 0 1rem;
-  /* max-width: var(--max-width);
-  margin: auto; */
-  /* remove late */
-  border: 1px solid red;
   font-size: 2rem;
   overflow-y: scroll;
 }
 
 .formWrapper {
   max-width: 32rem;
-  border: 1px solid green;
   margin: 7.3rem auto;
 }
 

@@ -4,33 +4,40 @@ import { InputCheckbox } from '../InputCheckbox/InputCheckbox'
 import { InputButtons } from '../InputButtons/InputButtons'
 import { InputTextNumber } from '../InputTextNumber/InputTextNumber'
 import styles from './Form.module.css'
-import { Button } from '../Button/Button'
 import { InputSelect } from '../InputSelect/InputSelect'
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { TTokenData } from 'src/app/types/TTokenData'
+import { uuid } from 'uuidv4'
+import { useRouter } from 'next/navigation'
+import { setToLocalStorage } from 'src/app/helpers/setToLocalStorage'
 
 export const Form = () => {
+  const router = useRouter()
+  const [isFormError, setIsFormError] = useState(false)
   const [tokenData, setTokenData] = useState<TTokenData>({
-    company: '',
+    company: 'My Company',
     tokenName: '',
     symbol: '',
     tokenSupply: null,
     blockchain: 'Enthereum',
     enabled: false,
+    id: uuid(),
   })
 
-  // const handleClick = async () => {
-  //   if (!isError) {
-  //     window.localStorage.setItem('query', JSON.stringify(validatedValue))
-  //     router.push('./movies')
-  //   } else {
-  //     return
-  //   }
-  // }
-
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (!isFormError) {
+      console.log('isFormError2', isFormError)
+      setToLocalStorage(tokenData)
+      router.push('./my-tokens')
+    } else {
+      return
+    }
+  }
+  console.log('isFormError', isFormError)
   console.log(tokenData)
   return (
-    <form className={styles.form}>
+    <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
       <InputSelect tokenData={tokenData} setTokenData={setTokenData} />
       <InputTextNumber
         key="tokenName"
@@ -40,6 +47,8 @@ export const Form = () => {
         type={'text'}
         tokenData={tokenData}
         setTokenData={setTokenData}
+        isFormError={isFormError}
+        setIsFormError={setIsFormError}
       />
       <InputTextNumber
         key="symbol"
@@ -49,6 +58,8 @@ export const Form = () => {
         type={'text'}
         tokenData={tokenData}
         setTokenData={setTokenData}
+        isFormError={isFormError}
+        setIsFormError={setIsFormError}
       />
       <InputTextNumber
         key="tokenSupply"
@@ -58,9 +69,11 @@ export const Form = () => {
         type={'number'}
         tokenData={tokenData}
         setTokenData={setTokenData}
+        isFormError={isFormError}
+        setIsFormError={setIsFormError}
       />
       <InputButtons tokenData={tokenData} setTokenData={setTokenData} />
-      <InputCheckbox />
+      <InputCheckbox tokenData={tokenData} setTokenData={setTokenData} />
       <button type="submit" className={styles.buttonSubmit}>
         SAVE DRAFT
       </button>

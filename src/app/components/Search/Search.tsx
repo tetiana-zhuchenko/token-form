@@ -1,7 +1,7 @@
 'use client'
 
 import { ChangeEvent, useState } from 'react'
-import { FilterButton } from '../FilterButton/FilterButton'
+
 import styles from './Search.module.css'
 
 export const Search = () => {

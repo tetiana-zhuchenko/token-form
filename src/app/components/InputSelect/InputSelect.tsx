@@ -22,6 +22,7 @@ export const InputSelect = ({ tokenData, setTokenData }: TInputSelectProps) => {
         id="companies-select"
         onChange={handleSelectChange}
         className={styles.input}
+        required
       >
         <option value="My Company">My Company</option>
         <option value="Google">Google</option>

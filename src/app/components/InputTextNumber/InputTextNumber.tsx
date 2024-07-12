@@ -17,6 +17,8 @@ type TInputTextNumber = {
   type: 'text' | 'number'
   tokenData: TTokenData
   setTokenData: Dispatch<SetStateAction<TTokenData>>
+  isFormError: boolean
+  setIsFormError: Dispatch<SetStateAction<boolean>>
 }
 
 export const InputTextNumber = ({
@@ -26,6 +28,8 @@ export const InputTextNumber = ({
   type,
   tokenData,
   setTokenData,
+  isFormError,
+  setIsFormError,
 }: TInputTextNumber) => {
   const [inputInfo, setInputInfo] = useState({ value: '', name: '' })
   const [validatedValue, setValidatedValue] = useState<string | number>('')
@@ -37,6 +41,7 @@ export const InputTextNumber = ({
         const validatedInput = validateText(inputInfo.value)
         if (validatedInput) {
           setIsError(false)
+          setIsFormError(false)
           setValidatedValue(validatedInput)
           setTokenData(() => ({
             ...tokenData,
@@ -44,11 +49,13 @@ export const InputTextNumber = ({
           }))
         } else {
           setIsError(true)
+          setIsFormError(true)
         }
       } else if (type === 'number') {
         const validNumber = validateNumber(inputInfo.value)
         if (validNumber) {
           setIsError(false)
+          setIsFormError(false)
           setValidatedValue(Number(validNumber))
           setTokenData(() => ({
             ...tokenData,
@@ -56,6 +63,7 @@ export const InputTextNumber = ({
           }))
         } else {
           setIsError(true)
+          setIsFormError(true)
         }
       }
     }
@@ -81,7 +89,7 @@ export const InputTextNumber = ({
         min="0"
         max="10000000"
         required
-        onChange={(e) => handleInputChange(e)}
+        onChange={handleInputChange}
       />
       {isError && <p className={styles.errorMessage}>Invalid input</p>}
     </div>

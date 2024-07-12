@@ -1,1 +1,1 @@
-export type TBlockchain = 'Enthereum' | 'Binance Smart Chain'
+export type TBlockchain = 'Enthereum' | 'Binance Smart Chain' | 'All Chains'
