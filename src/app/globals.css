@@ -26,10 +26,10 @@
 html,
 body {
   font-size: 62.7%;
-  max-width: var(--max-width);
+  /* max-width: var(--max-width); */
   min-height: 100dvh;
   height: 100%;
-  margin: auto;
+  /* margin: auto; */
 }
 
 body {

@@ -1,5 +1,7 @@
 .footer {
   max-height: var(--footer-height);
+  max-width: var(--max-width);
+  margin: auto;
   height: 100%;
   display: flex;
 }

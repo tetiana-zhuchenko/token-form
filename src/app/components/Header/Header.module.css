@@ -1,6 +1,8 @@
 .main {
   max-height: var(--header-height);
   height: 100%;
+  max-width: var(--max-width);
+  margin: auto;
 }
 
 .logo {

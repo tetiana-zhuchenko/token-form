@@ -1,25 +1,20 @@
 import { MouseEventHandler } from 'react'
-import styles from './Button.module.css'
+import styles from './FilterButton.module.css'
 import { TBlockchain } from 'src/app/types/TBlockchain'
 
-type TButton = {
-  title: TBlockchain
+type TFilterButton = {
+  title: string
   isActive: boolean
   type: 'button' | 'submit' | 'reset'
-  handleButtonClick: (title: TBlockchain) => void
+  // handleButtonClick: (title: TBlockchain) => void
 }
 
-export const Button = ({
-  title,
-  isActive,
-  type,
-  handleButtonClick,
-}: TButton) => {
+export const FilterButton = ({ title, isActive, type }: TFilterButton) => {
   return (
     <button
       type={type}
       className={isActive ? styles.activeBtn : styles.button}
-      onClick={() => handleButtonClick(title)}
+      onClick={() => {}}
     >
       {title}
     </button>
