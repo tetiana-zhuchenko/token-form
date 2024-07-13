@@ -1,3 +1,5 @@
+'use client'
+
 import { TTokenData } from '../types/TTokenData'
 
 export const setToLocalStorage = (data: TTokenData) => {

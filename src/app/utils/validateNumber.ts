@@ -4,7 +4,6 @@ const validateNumber = (value: string) => {
   if (isNumber) {
     return Number(value)
   } else {
-    console.log('err in validateNumber')
     return false
   }
 }

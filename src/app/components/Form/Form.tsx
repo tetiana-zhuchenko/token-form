@@ -7,7 +7,7 @@ import styles from './Form.module.css'
 import { InputSelect } from '../InputSelect/InputSelect'
 import { FormEvent, useState } from 'react'
 import { TTokenData } from 'src/app/types/TTokenData'
-import { uuid } from 'uuidv4'
+import { v4 as uuid } from 'uuid'
 import { useRouter } from 'next/navigation'
 import { setToLocalStorage } from 'src/app/helpers/setToLocalStorage'
 
@@ -27,15 +27,13 @@ export const Form = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!isFormError) {
-      console.log('isFormError2', isFormError)
       setToLocalStorage(tokenData)
       router.push('./my-tokens')
     } else {
       return
     }
   }
-  console.log('isFormError', isFormError)
-  console.log(tokenData)
+
   return (
     <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
       <InputSelect tokenData={tokenData} setTokenData={setTokenData} />

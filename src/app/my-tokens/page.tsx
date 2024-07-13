@@ -20,11 +20,19 @@ const MyTokens = () => {
           setDisplayedTokens={setDisplayedTokens}
           myTokens={myTokens}
         />
-        <Search />
+        <Search
+          displayedTokens={displayedTokens}
+          setDisplayedTokens={setDisplayedTokens}
+          myTokens={myTokens}
+        />
         <ul className={styles.itemsList}>
           {displayedTokens.map((token) => (
             <li key={token.id}>
-              <Token {...token} />
+              <Token
+                displayedTokens={displayedTokens}
+                setDisplayedTokens={setDisplayedTokens}
+                token={token}
+              />
             </li>
           ))}
         </ul>

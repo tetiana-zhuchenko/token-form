@@ -1,10 +1,35 @@
+import { Dispatch, SetStateAction, useState } from 'react'
 import { TTokenData } from 'src/app/types/TTokenData'
 import { CreateButton } from '../CreateButton/CreateButton'
 import styles from './Token.module.css'
+import { setToLocalStorage } from 'src/app/helpers/setToLocalStorage'
+import { v4 as uuid } from 'uuid'
 
-export const Token = (token: TTokenData) => {
-  console.log('test', token)
+type TTokenProps = {
+  token: TTokenData
+  displayedTokens: TTokenData[]
+  setDisplayedTokens: Dispatch<SetStateAction<TTokenData[]>>
+}
+export const Token = ({
+  token,
+  displayedTokens,
+  setDisplayedTokens,
+}: TTokenProps) => {
+  const [isAlert, setIsAlert] = useState(false)
+
   const { company, tokenName, symbol, tokenSupply, blockchain, enabled } = token
+
+  const handleDuplicate = () => {
+    const duplicatedToken = {
+      ...token,
+      id: uuid(),
+      tokenName: `${tokenName} (Duplicated) `,
+    }
+    setToLocalStorage(duplicatedToken)
+    setDisplayedTokens(() => [duplicatedToken, ...displayedTokens])
+    setIsAlert(true)
+    setTimeout(() => setIsAlert(false), 2000)
+  }
   return (
     <div>
       <ul className={styles.container}>
@@ -37,9 +62,9 @@ export const Token = (token: TTokenData) => {
             title={'Duplicate Token'}
             type={'button'}
             isActive={true}
-            key={'Enthereum'}
-            handleButtonClick={() => {}}
+            handleButtonClick={handleDuplicate}
           />
+          {isAlert && <p className={styles.message}>Token was Duplicated</p>}
         </li>
       </ul>
     </div>

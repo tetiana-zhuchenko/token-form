@@ -31,3 +31,11 @@
   color: var(--font-color-primary);
   text-align: left;
 }
+
+.message {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  color: var(--bg-secondary);
+  margin-top: 1rem;
+}

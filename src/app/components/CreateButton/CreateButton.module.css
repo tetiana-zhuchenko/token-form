@@ -29,7 +29,10 @@
   background-color: var(--bg-secondary);
 }
 
-.activeBtn:hover,
-.activeBtn:active {
+.activeBtn:hover {
   background: var(--hover);
+}
+
+.activeBtn:active {
+  background: #7c0080;
 }
