@@ -5,7 +5,7 @@ import { Footer } from './components/Footer/Footer'
 
 import './globals.css'
 
-export const robotoFont = Roboto({
+export const roboto = Roboto({
   subsets: ['latin'],
   variable: '--font-roboto',
   display: 'swap',
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${robotoFont.variable}`}>
+    <html lang="en" className={`${roboto.variable}`}>
       <body>
         <Header />
         {children}
