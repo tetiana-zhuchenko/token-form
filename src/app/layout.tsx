@@ -7,7 +7,6 @@ import './globals.css'
 
 export const roboto = Roboto({
   subsets: ['latin'],
-  variable: '--font-roboto',
   display: 'swap',
   weight: ['100', '300', '400', '500', '700', '900'],
 })
@@ -24,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable}`}>
+      <body className={`${roboto.className}`}>
         <Header />
         {children}
         <Footer />
