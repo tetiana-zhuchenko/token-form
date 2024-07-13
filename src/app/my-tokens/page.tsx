@@ -6,7 +6,6 @@ import { Search } from '../components/Search/Search'
 import { Token } from '../components/Token/Token'
 import { getFromLocalStorage } from '../helpers/getFromLocalStorage'
 import styles from './page.module.css'
-import { TTokenData } from '../types/TTokenData'
 
 const MyTokens = () => {
   const myTokens = getFromLocalStorage()
@@ -15,11 +14,7 @@ const MyTokens = () => {
     <main className={styles.main}>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>My Tokens List</h1>
-        <Filters
-          displayedTokens={displayedTokens}
-          setDisplayedTokens={setDisplayedTokens}
-          myTokens={myTokens}
-        />
+        <Filters setDisplayedTokens={setDisplayedTokens} myTokens={myTokens} />
         <Search
           displayedTokens={displayedTokens}
           setDisplayedTokens={setDisplayedTokens}
@@ -36,8 +31,6 @@ const MyTokens = () => {
             </li>
           ))}
         </ul>
-
-        <div className={styles.itemsList}></div>
       </div>
     </main>
   )

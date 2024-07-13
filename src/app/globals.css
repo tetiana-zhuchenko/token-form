@@ -5,7 +5,8 @@
 
   --bg-primary: #ffffff;
   --bg-secondary: #c50000;
-  --hover: #880101;
+  --hover: #f01111;
+  --active: #7f3030;
 
   --border: 0.1rem solid #bbbbbb;
   --border-radius: 0.8rem;
@@ -26,10 +27,8 @@
 html,
 body {
   font-size: 62.7%;
-  /* max-width: var(--max-width); */
   min-height: 100dvh;
   height: 100%;
-  /* margin: auto; */
 }
 
 body {

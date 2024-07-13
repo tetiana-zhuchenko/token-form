@@ -1,6 +1,4 @@
-import { MouseEventHandler } from 'react'
 import styles from './CreateButton.module.css'
-import { TBlockchain } from 'src/app/types/TBlockchain'
 
 type TCreateButton = {
   title: string

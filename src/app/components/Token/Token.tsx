@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction, useState } from 'react'
+import { v4 as uuid } from 'uuid'
 import { TTokenData } from 'src/app/types/TTokenData'
 import { CreateButton } from '../CreateButton/CreateButton'
-import styles from './Token.module.css'
 import { setToLocalStorage } from 'src/app/helpers/setToLocalStorage'
-import { v4 as uuid } from 'uuid'
+import styles from './Token.module.css'
 
 type TTokenProps = {
   token: TTokenData

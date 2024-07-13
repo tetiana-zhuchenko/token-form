@@ -1,6 +1,6 @@
+import { ChangeEvent } from 'react'
 import { TInputSelectProps } from 'src/app/types/TInputProps'
 import styles from './InputCheckbox.module.css'
-import { ChangeEvent } from 'react'
 
 export const InputCheckbox = ({
   tokenData,
@@ -13,6 +13,7 @@ export const InputCheckbox = ({
       enabled: checked,
     }))
   }
+
   return (
     <div>
       <p className={styles.checkboxRadioTitle}>Supply</p>

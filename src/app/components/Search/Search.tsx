@@ -1,9 +1,8 @@
 'use client'
 
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
-
-import styles from './Search.module.css'
 import { TTokenData } from 'src/app/types/TTokenData'
+import styles from './Search.module.css'
 
 type TSearchProps = {
   myTokens: TTokenData[]

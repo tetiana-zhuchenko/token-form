@@ -1,14 +1,17 @@
 import { Navigation } from '../Navigation/Navigation'
-
 import styles from './Footer.module.css'
 
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
-        <p className={styles.info}>© 2021 All rights reserved.</p>
+        <a href="#" className={styles.info}>
+          © 2021 All rights reserved.
+        </a>
         <Navigation />
-        <p className={styles.info}>Contact us: ask@test.capital</p>
+        <a href="mailto:ask@test.capital" className={styles.info}>
+          Contact us: ask@test.capital
+        </a>
       </div>
     </footer>
   )

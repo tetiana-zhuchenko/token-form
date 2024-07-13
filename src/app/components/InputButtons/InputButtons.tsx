@@ -1,8 +1,8 @@
+import { useState } from 'react'
 import { TInputSelectProps } from 'src/app/types/TInputProps'
+import { TBlockchain } from 'src/app/types/TBlockchain'
 import { Button } from '../Button/Button'
 import styles from './InputButtons.module.css'
-import { useState } from 'react'
-import { TBlockchain } from 'src/app/types/TBlockchain'
 
 export const InputButtons = ({
   tokenData,

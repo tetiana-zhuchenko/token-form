@@ -1,5 +1,5 @@
-import styles from './Button.module.css'
 import { TBlockchain } from 'src/app/types/TBlockchain'
+import styles from './Button.module.css'
 
 type TButton = {
   title: TBlockchain

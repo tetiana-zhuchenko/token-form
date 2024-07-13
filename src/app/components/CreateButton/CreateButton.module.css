@@ -11,9 +11,12 @@
   background-color: var(--bg--primary);
 }
 
-.button:hover,
-.button:active {
+.button:hover {
   background: var(--hover);
+}
+
+.button:active {
+  background: var(--active);
 }
 
 .activeBtn {
@@ -34,5 +37,5 @@
 }
 
 .activeBtn:active {
-  background: #7c0080;
+  background: var(--active);
 }

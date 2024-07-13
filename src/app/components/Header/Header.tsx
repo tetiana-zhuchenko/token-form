@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import styles from './Header.module.css'
 import logo from '../../assets/logo.png'
+import styles from './Header.module.css'
 
 export const Header = () => {
   return (

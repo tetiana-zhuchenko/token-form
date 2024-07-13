@@ -1,24 +1,19 @@
 'use client'
 
 import { Dispatch, SetStateAction, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { CreateButton } from '../CreateButton/CreateButton'
-import styles from './Filters.module.css'
 import { TTokenData } from 'src/app/types/TTokenData'
 import { Button } from '../Button/Button'
 import { TBlockchain } from 'src/app/types/TBlockchain'
-import { useRouter } from 'next/navigation'
+import styles from './Filters.module.css'
 
 type TFiltersProps = {
   myTokens: TTokenData[]
-  displayedTokens: TTokenData[]
   setDisplayedTokens: Dispatch<SetStateAction<TTokenData[]>>
 }
 
-export const Filters = ({
-  displayedTokens,
-  setDisplayedTokens,
-  myTokens,
-}: TFiltersProps) => {
+export const Filters = ({ setDisplayedTokens, myTokens }: TFiltersProps) => {
   const router = useRouter()
   const [isActive, setIsActive] = useState('All Chains')
 
@@ -54,7 +49,7 @@ export const Filters = ({
         title={'All Chains'}
         isActive={isActive === 'All Chains'}
         type={'button'}
-        key={'Binance Smart Chain'}
+        key={'Chain'}
         handleButtonClick={filterByChain}
       />
 

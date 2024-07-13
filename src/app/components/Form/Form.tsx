@@ -1,15 +1,15 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+import { FormEvent, useState } from 'react'
+import { v4 as uuid } from 'uuid'
 import { InputCheckbox } from '../InputCheckbox/InputCheckbox'
 import { InputButtons } from '../InputButtons/InputButtons'
 import { InputTextNumber } from '../InputTextNumber/InputTextNumber'
-import styles from './Form.module.css'
 import { InputSelect } from '../InputSelect/InputSelect'
-import { FormEvent, useState } from 'react'
 import { TTokenData } from 'src/app/types/TTokenData'
-import { v4 as uuid } from 'uuid'
-import { useRouter } from 'next/navigation'
 import { setToLocalStorage } from 'src/app/helpers/setToLocalStorage'
+import styles from './Form.module.css'
 
 export const Form = () => {
   const router = useRouter()
@@ -45,7 +45,6 @@ export const Form = () => {
         type={'text'}
         tokenData={tokenData}
         setTokenData={setTokenData}
-        isFormError={isFormError}
         setIsFormError={setIsFormError}
       />
       <InputTextNumber
@@ -56,7 +55,6 @@ export const Form = () => {
         type={'text'}
         tokenData={tokenData}
         setTokenData={setTokenData}
-        isFormError={isFormError}
         setIsFormError={setIsFormError}
       />
       <InputTextNumber
@@ -67,7 +65,6 @@ export const Form = () => {
         type={'number'}
         tokenData={tokenData}
         setTokenData={setTokenData}
-        isFormError={isFormError}
         setIsFormError={setIsFormError}
       />
       <InputButtons tokenData={tokenData} setTokenData={setTokenData} />

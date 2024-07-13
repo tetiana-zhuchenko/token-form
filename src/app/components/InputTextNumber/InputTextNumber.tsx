@@ -5,10 +5,10 @@ import {
   useEffect,
   useState,
 } from 'react'
-import styles from './InputTextNumber.module.css'
 import { TTokenData } from 'src/app/types/TTokenData'
 import validateText from 'src/app/utils/validateText'
 import validateNumber from 'src/app/utils/validateNumber'
+import styles from './InputTextNumber.module.css'
 
 type TInputTextNumber = {
   label: string
@@ -17,7 +17,6 @@ type TInputTextNumber = {
   type: 'text' | 'number'
   tokenData: TTokenData
   setTokenData: Dispatch<SetStateAction<TTokenData>>
-  isFormError: boolean
   setIsFormError: Dispatch<SetStateAction<boolean>>
 }
 
@@ -28,7 +27,6 @@ export const InputTextNumber = ({
   type,
   tokenData,
   setTokenData,
-  isFormError,
   setIsFormError,
 }: TInputTextNumber) => {
   const [inputInfo, setInputInfo] = useState({ value: '', name: '' })

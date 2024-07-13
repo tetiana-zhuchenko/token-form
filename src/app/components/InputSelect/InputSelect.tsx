@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react'
-import styles from './InputSelect.module.css'
-import { TTokenData } from 'src/app/types/TTokenData'
 import { TInputSelectProps } from 'src/app/types/TInputProps'
+import { initialCompanies } from '../../../../data/initialCompanies'
+import styles from './InputSelect.module.css'
 
 export const InputSelect = ({ tokenData, setTokenData }: TInputSelectProps) => {
   const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -24,10 +24,11 @@ export const InputSelect = ({ tokenData, setTokenData }: TInputSelectProps) => {
         className={styles.input}
         required
       >
-        <option value="My Company">My Company</option>
-        <option value="Google">Google</option>
-        <option value="Microsoft">Microsoft</option>
-        <option value="Amazon">Amazon</option>
+        {initialCompanies.map((company) => (
+          <option key={company.id} value="My Company">
+            {company.title}
+          </option>
+        ))}
       </select>
     </div>
   )
