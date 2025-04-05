@@ -25,7 +25,7 @@ export const InputSelect = ({ tokenData, setTokenData }: TInputSelectProps) => {
         required
       >
         {initialCompanies.map((company) => (
-          <option key={company.id} value="My Company">
+          <option key={company.id} value={company.title}>
             {company.title}
           </option>
         ))}

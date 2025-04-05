@@ -32,6 +32,7 @@ export const InputTextNumber = ({
   const [inputInfo, setInputInfo] = useState({ value: '', name: '' })
   const [validatedValue, setValidatedValue] = useState<string | number>('')
   const [isError, setIsError] = useState(false)
+  const [isInvalidText, setIsInvalidText] = useState(false)
 
   useEffect(() => {
     if (inputInfo.value) {
@@ -40,6 +41,7 @@ export const InputTextNumber = ({
         if (validatedInput) {
           setIsError(false)
           setIsFormError(false)
+          setIsInvalidText(false)
           setValidatedValue(validatedInput)
           setTokenData(() => ({
             ...tokenData,
@@ -48,6 +50,7 @@ export const InputTextNumber = ({
         } else {
           setIsError(true)
           setIsFormError(true)
+          setIsInvalidText(true)
         }
       } else if (type === 'number') {
         const validNumber = validateNumber(inputInfo.value)
@@ -90,6 +93,9 @@ export const InputTextNumber = ({
         onChange={handleInputChange}
       />
       {isError && <p className={styles.errorMessage}>Invalid input</p>}
+      {isInvalidText && (
+        <p className={styles.errorMessage}>Use only english letters</p>
+      )}
     </div>
   )
 }

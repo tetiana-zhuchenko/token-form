@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <a href="#" className={styles.info}>
-          © 2021 All rights reserved.
+          © 2025 All rights reserved.
         </a>
         <Navigation />
         <a href="mailto:ask@test.capital" className={styles.info}>
