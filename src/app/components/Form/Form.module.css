@@ -27,3 +27,9 @@
 .buttonSubmit:active {
   background: var(--active);
 }
+
+@media (max-width: 600px) {
+  .buttonSubmit {
+    margin-top: 16px;
+  }
+}
